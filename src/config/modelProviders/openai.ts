@@ -4,6 +4,36 @@ import { ModelProviderCard } from '@/types/llm';
 const OpenAI: ModelProviderCard = {
   apiKeyUrl: 'https://platform.openai.com/api-keys?utm_source=lobehub',
   chatModels: [
+    // --- 注入的 Gemini 3.0 模型 (开始) ---
+    {
+      contextWindowTokens: 1_000_000,
+      description: 'Gemini 3.0 Pro Vision Preview，具备强大的视觉识别能力。',
+      displayName: 'Gemini 3.0 Vision',
+      enabled: true, // 默认开启
+      id: 'gemini-3-pro-image-preview', // 对应你的 API 模型 ID
+      vision: true, // 【核心修改】强制开启视觉能力
+      functionCall: true,
+    },
+    {
+      contextWindowTokens: 1_000_000,
+      description: 'Gemini 3.0 Pro Preview，最新的谷歌旗舰模型。',
+      displayName: 'Gemini 3.0 Pro',
+      enabled: true,
+      id: 'gemini-3-pro-preview',
+      vision: true,
+      functionCall: true,
+    },
+    {
+      contextWindowTokens: 1_000_000,
+      description: 'Gemini 3.0 Pro Thinking，具备深度思考推理能力。',
+      displayName: 'Gemini 3.0 Thinking',
+      enabled: true,
+      id: 'gemini-3-pro-preview-thinking',
+      vision: true,
+      functionCall: true,
+    },
+    // --- 注入的 Gemini 3.0 模型 (结束) ---
+    
     {
       contextWindowTokens: 400_000,
       description:
